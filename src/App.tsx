@@ -10,7 +10,7 @@ import { Flagdle } from "./components/Flagdle";
 import { Stats } from "./components/panels/Stats";
 import { useReactPWAInstall } from "@teuteuf/react-pwa-install";
 import { InstallButton } from "./components/InstallButton";
-import { Twemoji } from "@teuteuf/react-emoji-render";
+import Emoji from "react-emoji-render";
 import { getDayString, useTodays } from "./hooks/useTodays";
 
 const supportLink: Record<string, string> = {
@@ -71,7 +71,7 @@ function App() {
               type="button"
               onClick={() => setInfoOpen(true)}
             >
-              <Twemoji text="❓" />
+              <Emoji text="❓" />
             </button>
             {supported() && !isInstalled() && (
               <InstallButton pwaInstall={pwaInstall} />
@@ -84,12 +84,12 @@ function App() {
               type="button"
               onClick={() => setStatsOpen(true)}
             >
-              <Twemoji text="📈" />
+              <Emoji text="📈" />
             </button>
           </header>
           <Game settingsData={settingsData} updateSettings={updateSettings} />
           <footer className="flex justify-center items-center text-sm mt-8 mb-1">
-            <Twemoji
+            <Emoji
               text="❤️"
               className="flex items-center justify-center mr-1"
             />{" "}
@@ -111,7 +111,7 @@ function App() {
                 rel="noopener noreferrer"
               >
                 <div className="w-max">
-                  <Twemoji
+                  <Emoji
                     text={t("buyMeACoffee")}
                     options={{ className: "inline-block" }}
                   />
